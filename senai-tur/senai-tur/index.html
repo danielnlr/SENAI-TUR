@@ -6,10 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Senai Tur</title>
   <script src="https://unpkg.com/feather-icons"></script>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="assets/styles/style.css">
 </head>
 
 <body>
+  <div  class="modal">
+    <div class="conteudo">
+      <p class="descricao">Pacote 5 noites hotel premium <br>
+        Café da manhã incluso <br>
+        Wi-Fi <br>
+        Passeio <br>
+        Tudo isso e muito mais com o SenaiTur
+      </p>
+      <button>Faça sua Reserva</button>
+    </div>
+    <div class="fundo"></div>
+  </div>
+
+
   <header>
     <nav>
       <p>Senai Tur </p>
@@ -18,13 +32,14 @@
         <li><a href="#pacotes">Pacotes</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#contato">Contato</a></li>
+        <li><a href="reserva">Reserva</a></li>
       </ul>
     </nav>
 
     <div  id="home" class="header-content">
       <h1>Veneza</h1>
       <p>Conheça Veneza, e viva aventuras extraodinarias, o embarque está proximo, junte-se a nós nessa experiência</p>
-      <button>Saiba mais</button>
+    <button>Saiba mais</button>
     </div>
   </header>
 
@@ -39,7 +54,7 @@
         <div class="card-tag card-tag-bottom">
           <p>R$ 1500,00</p>
         </div>
-        <img class="card-image" src="assets/paris.jpeg" alt="Paris">
+        <img class="card-image" src="assets/img/paris.jpeg" alt="Paris">
         <div class="card-content">
           <h1>Pacote 5 noites hotel premium</h1>
           <ul>
@@ -57,7 +72,7 @@
         <div class="card-tag card-tag-bottom">
           <p>R$ 1200,00</p>
         </div>
-        <img class="card-image" src="assets/miami.jpeg" alt="Miami">
+        <img class="card-image" src="assets/img/miami.jpeg" alt="Miami">
         <div class="card-content">
           <h1>Pacote 10 dias em Miami Beach</h1>
           <ul>
@@ -75,7 +90,7 @@
         <div class="card-tag card-tag-bottom">
           <p>R$ 1400,00</p>
         </div>
-        <img class="card-image" src="assets/berlim.jpeg" alt="Berlim">
+        <img class="card-image" src="assets/img/berlim.jpeg" alt="Berlim">
         <div class="card-content">
           <h1>Pacote 4 noites em Berlim</h1>
           <ul>
@@ -93,7 +108,7 @@
         <div class="card-tag card-tag-bottom">
           <p>R$ 500</p>
         </div>
-        <img class="card-image" src="assets/fortaleza.jpg" alt="Fortaleza">
+        <img class="card-image" src="assets/img/fortaleza.jpg" alt="Fortaleza">
         <div class="card-content">
           <h1>7 dias em Fortaleza </h1>
           <ul>
@@ -111,7 +126,7 @@
         <div class="card-tag card-tag-bottom">
           <p>R$ 200</p>
         </div>
-        <img class="card-image" src="assets/jeri.jpg" alt="jericoacoara">
+        <img class="card-image" src="assets/img/jeri.jpg" alt="jericoacoara">
         <div class="card-content">
           <h1>Pacote 14 dias em Jericoacoara</h1>
           <ul>
@@ -129,7 +144,7 @@
         <div class="card-tag card-tag-bottom">
           <p>R$ 1200,00</p>
         </div>
-        <img class="card-image" src="assets/canada.jpg" alt="Canada">
+        <img class="card-image" src="assets/img/canada.jpg" alt="Canada">
         <div class="card-content">
           <h1>Pacote 14 dias em Moraine lake, Canada</h1>
           <ul>
@@ -149,7 +164,7 @@
         <i data-feather="map"></i>
         <div class="card-content">
           <h3>Tour guiados</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing sciunt deserunt, alias illo!</p>
+          <p>Encontre o melhor guia para te acompanhar em suas viagens</p>
         </div>
         <button>Saiba mais</button>
       </div>
@@ -157,8 +172,8 @@
       <div class="card">
         <i data-feather="camera"></i>
         <div class="card-content">
-          <h3>Fotográfia Profissional</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing sciunt deserunt, alias illo!</p>
+          <h3>Fotografia Profissional</h3>
+          <p>Encontre o melhor fotógrafo para registrar seus momentos</p>
         </div>
         <button>Saiba mais</button>
       </div>
@@ -167,7 +182,7 @@
         <i data-feather="navigation"></i>
         <div class="card-content">
           <h3>Aluguel de Veículo</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing sciunt deserunt, alias illo!</p>
+          <p>Alugue seus veículos conosco, aqui você encontra veículos para todos tipos de terrenos </p>
         </div>
         <button>Saiba mais</button>
       </div>
@@ -179,17 +194,17 @@
       <h1>Entre em contato</h1>
       <ul>
         <li><i data-feather="map-pin"></i>Rua central</li>
-        <li><i data-feather="mail"></i>contato@rodrigoviagens</li>
+        <li><i data-feather="mail"></i>contato@SenaiTur</li>
         <li><i data-feather="phone"></i>(85) 3100-4455</li>
       </ul>
     </div>
-    <!--The div element for the map -->
+    
     <div id="map"></div>
   </section>
 
 
   <script>
-    // feather icons
+    
     feather.replace();
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -201,15 +216,15 @@
             });
         });
     });
-    // Initialize and add the map
+    
     function initMap() {
-      // The location of Uluru
-      // var uluru = {lat: -25.344, lng: 131.036};
+     
+     
       var uluru = { lat: -3.71839, lng: -38.5434 };
-      // The map, centered at Uluru
+      
       var map = new google.maps.Map(
         document.getElementById('map'), { zoom: 4, center: uluru });
-      // The marker, positioned at Uluru
+     
       var marker = new google.maps.Marker({ position: uluru, map: map });
     }
   </script>
